@@ -1,20 +1,35 @@
 package it.polito.tdp.esercizioorm.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Studente {
 
 	private int matricola;
 	private String nome;
 	private String cognome;
 	private String cds;
+	
+	private List<Corso> corsi;
 
 	public Studente() {
+		corsi = new ArrayList<Corso>();
 	}
 
 	public Studente(int matricola, String nome, String cognome, String cds) {
+		corsi = new ArrayList<Corso>();
 		this.matricola = matricola;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.cds = cds;
+	}
+	
+	public List<Corso> getCorsi() {
+		return corsi;
+	}
+
+	public void setCorsi(List<Corso> corsi) {
+		this.corsi = corsi;
 	}
 
 	public int getMatricola() {
