@@ -19,7 +19,7 @@ public class CorsoDAO {
 		List<Corso> result = new ArrayList<>() ;
 		
 		try {
-			Connection conn = ConnectDB.getConnection();
+			Connection conn = ConnectDBCP.getConnection();
 			PreparedStatement st = conn.prepareStatement(sql) ;
 			ResultSet res = st.executeQuery() ;
 			
@@ -43,10 +43,10 @@ public class CorsoDAO {
 	}
 
 	public void getCorsiFromStudente(Studente studente, CorsoIdMap corsoMap) {
-		String sql = "SELECT codins, crediti, nome, pd FROM corso AS c, iscrizione AS i WHERE c.codins=i.codins AND i.matricola=?" ;
+		String sql = "SELECT c.codins, crediti, nome, pd FROM corso AS c, iscrizione AS i WHERE c.codins = i.codins AND i.matricola=?" ;
 		
 		try {
-			Connection conn = ConnectDB.getConnection();
+			Connection conn = ConnectDBCP.getConnection();
 			PreparedStatement st = conn.prepareStatement(sql) ;
 			st.setInt(1, studente.getMatricola());
 			ResultSet res = st.executeQuery() ;

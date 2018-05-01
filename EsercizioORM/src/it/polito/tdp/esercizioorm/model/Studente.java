@@ -23,14 +23,6 @@ public class Studente {
 		this.cognome = cognome;
 		this.cds = cds;
 	}
-	
-	public List<Corso> getCorsi() {
-		return corsi;
-	}
-
-	public void setCorsi(List<Corso> corsi) {
-		this.corsi = corsi;
-	}
 
 	public int getMatricola() {
 		return matricola;
@@ -62,6 +54,14 @@ public class Studente {
 
 	public void setCds(String cds) {
 		this.cds = cds;
+	}
+	
+	public List<Corso> getCorsi() {
+		return corsi;
+	}
+
+	public void setCorsi(List<Corso> corsi) {
+		this.corsi = corsi;
 	}
 
 	@Override
